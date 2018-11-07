@@ -20,8 +20,6 @@ public class Maze {
     //goes thorough the first line to get the metadata for the maze
     //initializes chars with the given no. of rows and cols
     public Maze(String mazeFileLocation)throws Exception{
-        //System.out.println("Enter the name for maze file: ");
-        //Scanner scn =new Scanner (System.in);
         inputFile=new Scanner(new File(mazeFileLocation));
         if (inputFile.hasNext()){
             rows=inputFile.nextInt();
@@ -35,6 +33,8 @@ public class Maze {
         System.out.println(inputFile.nextLine());
             //fixes the out of bounds exception
 
+        makeMaze();
+        printMaze();
     }
     //inserts all the maze into chars
     public void makeMaze(){
@@ -57,6 +57,7 @@ public class Maze {
         }
     }
 
+    //finds the path in the maze
     static void findpath(){
 
     }

@@ -1,8 +1,7 @@
-// Min Thein
-// 1259846
-// Queue.java
-// demonstrates queue
-// to run this program: C>java QueueApp
+//Min       1259846
+//Gurinder
+//Rafael
+
 ////////////////////////////////////////////////////////////////
 class Queue
 {

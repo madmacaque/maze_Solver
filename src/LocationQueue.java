@@ -1,10 +1,7 @@
+//Min       1259846
+//Gurinder
+//Rafael
 
-/**
- * Write a description of class LoactionQueue here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class LocationQueue
 {
    private int maxSize;
@@ -15,7 +12,7 @@ public class LocationQueue
    
    public LocationQueue(int s)
    {
-       maxSize = s;
+        maxSize = s;
         queArray = new Location[maxSize];
         front = 0;
         rear = -1;
