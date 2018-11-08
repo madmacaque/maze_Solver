@@ -68,10 +68,48 @@ public class Maze {
 
     //finds the path in the maze
     void findpath(){
-
+        Location current=start;
+        while(!queue.isEmpty()){
+            if (current==end){                  //found
+                System.out.println("Found path");
+                printMaze();
+                return;
+            }
+            current=queue.remove();             //next in queue
+            chars[current.i][current.j]='.';    //visited
+            searchalldirections(current);
+        }
+        System.out.println("No path found");    //when queue is empty and end isn't found.
     }
 
-
-
-
+    //breath first search (east, west, north, south)
+    //if more than one path, add to queue
+    //TODO:it's broken. fix
+    void searchalldirections(Location current){
+        Location next;
+        if(current.j!=cols-1){              //checks east wall.
+            if (chars[current.i][current.j+1]==' '){  //east
+                next=new Location(current.i, current.j+1);
+                queue.insert(next);
+            }
+        }
+        if(current.j!=0){                   //check west wall
+            if (chars[current.i][current.j-1]==' '){  //west
+                next=new Location(current.i, current.j-1);
+                queue.insert(next);
+            }
+        }
+        if(current.i!=0){                   //checks for north wall.
+            if (chars[current.i-1][current.j]==' '){  //north
+                next=new Location(current.i-1, current.j);
+                queue.insert(next);
+            }
+        }
+        if (current.i!=rows-1) {            //checks south wall
+            if (chars[current.i + 1][current.j] == ' ') {  //south
+                next = new Location(current.i + 1, current.j);
+                queue.insert(next);
+            }
+        }
+    }
 }

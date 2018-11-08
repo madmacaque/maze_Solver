@@ -15,5 +15,7 @@ public class MazeApp {
         Scanner scn =new Scanner (System.in);
         String mazeFileLocation="src/"+"maze3.txt"; //scn.next());
         Maze themaze=new Maze(mazeFileLocation);
+        themaze.findpath();
+        //themaze.printMaze();
     }
 }
