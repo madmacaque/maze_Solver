@@ -13,12 +13,17 @@ public class Maze {
     public int cols;
     public int startRow;
     public int startCol;
+    public Location start;
     public int endRow;
     public int endCol;
+    public Location end;
+    public LocationQueue queue;
 
     //initializes a maze form the file location
     //goes thorough the first line to get the metadata for the maze
     //initializes chars with the given no. of rows and cols
+    //mark the start and end locations with the metadata
+    //initialize locationqueue and insert start.
     public Maze(String mazeFileLocation)throws Exception{
         inputFile=new Scanner(new File(mazeFileLocation));
         if (inputFile.hasNext()){
@@ -30,6 +35,10 @@ public class Maze {
             endCol=inputFile.nextInt();
         }
         chars=new char[cols][rows];
+        start=new Location(startRow,startCol);
+        end=new Location(endRow, endCol);
+        queue=new LocationQueue(rows*cols);
+        queue.insert(start);
         System.out.println(inputFile.nextLine());
             //fixes the out of bounds exception
 
@@ -58,9 +67,11 @@ public class Maze {
     }
 
     //finds the path in the maze
-    static void findpath(){
+    void findpath(){
 
     }
+
+
 
 
 }
