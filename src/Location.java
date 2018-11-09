@@ -7,35 +7,15 @@ public class Location
 
     int i , j;
 
+    //constructor i as row, and j as col
     public Location(int i, int j)
     {
         this.i = i; //columnNo
         this.j = j; //rowNo
     }
 
-    //we might not need these if i and j are public
-    public int i()
-    {
-       return i;
+    //checks if the 2 locations are the same
+    public boolean equals(Location location){
+        return (this.i==location.i && this.j==location.j);
     }
-    public int j()
-    {
-        return j;
-    }
-    
-    /*public Location north()
-    {
-        return Loaction(i-1, j);
-    }
-    
-    public Location south()
-    {
-        return Loaction(i+1, j);
-    }
-    
-    public Location ()
-    {
-        return Loaction(i-1, j);
-    }*/
-    
 }

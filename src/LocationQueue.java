@@ -9,6 +9,8 @@ public class LocationQueue
    private int front;
    private int rear;
    private int nItems;
+
+   //constructs a queue of size s
    public LocationQueue(int s)
    {
         maxSize = s;
@@ -36,6 +38,7 @@ public class LocationQueue
         nItems--;                      // one less item
         return temp;
     }
+
     // true if queue is empty
     public boolean isEmpty()
     {

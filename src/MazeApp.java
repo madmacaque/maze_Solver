@@ -13,9 +13,8 @@ public class MazeApp {
     public static void main(String[]  args) throws Exception {
         System.out.println("Enter the name for maze file: ");
         Scanner scn =new Scanner (System.in);
-        String mazeFileLocation="src/"+"maze3.txt"; //scn.next());
-        Maze themaze=new Maze(mazeFileLocation);
-        themaze.findpath();
-        //themaze.printMaze();
+        String mazeFileLocation="src/"+scn.next();
+        Maze theMaze=new Maze(mazeFileLocation);
+        theMaze.findpath();
     }
 }
